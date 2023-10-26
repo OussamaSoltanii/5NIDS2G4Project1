@@ -2,6 +2,6 @@ FROM openjdk:11-jdk
 
 EXPOSE 8089
 
-ADD Project1 Project1
+ADD 5nids2g4project1.jar 5nids2g4project1.jar
 
-ENTRYPOINT ["java", "-jar", "/Project1"]
+ENTRYPOINT ["java", "-jar", "/5nids2g4project1.jar"]

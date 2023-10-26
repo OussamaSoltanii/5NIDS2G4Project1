@@ -11,7 +11,7 @@ services:
       MYSQL_USER:
       MYSQL_PASSWORD:
   gestion-station-ski-1.0:
-    image: oussamasoltani/gestion-station-ski-1.0
+    image: oussamasoltani/5nids2g4project1.jar
     ports:
       - "8089:8089"
     depends_on:
