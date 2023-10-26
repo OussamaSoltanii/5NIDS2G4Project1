@@ -20,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level=AccessLevel.PRIVATE)
 @Entity
 public class Piste implements Serializable {
-
+	//Modification Oussama
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long numPiste;
