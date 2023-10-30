@@ -1,4 +1,4 @@
-  version: "2.3.3"  # Utilisez la version 3.3 de Docker Compose
+  version: "1.29.2"  # Utilisez la version 3.3 de Docker Compose
 
   services:
     mysql:
