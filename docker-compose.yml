@@ -6,10 +6,11 @@ services:
     restart: unless-stopped
 #    env_file: ./.env
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE= stationSki
-      - MYSQL_USER= Syrine
-      - MYSQL_PASSWORD =
+      - MYSQLDB_DOCKER_PORT=3306
+      - MYSQLDB_ROOT_PASSWORD=
+      - MYSQLDB_DATABASE=stationSki
+      - MYSQLDB_USER=Syrine
+      - MYSQL_PASSWORD=
     ports:
       - "3306:3306"
     volumes:
