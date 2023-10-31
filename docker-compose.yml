@@ -52,6 +52,17 @@ services:
       - MYSQL_DATABASE=Devops
       - MYSQL_USER=Syrine
       - MYSQL_PASSWORD=
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=adminpassword
+    volumes:
+      - grafana-storage:/var/lib/grafana
 networks:
   my-network:
 volumes:
