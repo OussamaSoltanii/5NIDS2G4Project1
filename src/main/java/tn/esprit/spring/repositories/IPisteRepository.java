@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import tn.esprit.spring.entities.Piste;
 
-public interface IPisteRepository extends JpaRepository<Piste, Long> {
+import java.util.Optional;
 
+public interface IPisteRepository extends JpaRepository<Piste, Long> {
+Optional<Piste>  findById(Long num);
 }
