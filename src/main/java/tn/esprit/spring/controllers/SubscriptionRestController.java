@@ -42,9 +42,9 @@ public class SubscriptionRestController {
         return  subscriptionServices.updateSubscription(subscription);
     }
     @Operation(description = "Retrieve Subscriptions created between two dates")
-    @GetMapping("/all/{date1}/{date2}")
-    public List<Subscription> getSubscriptionsByDates(@PathVariable("date1") LocalDate startDate,
-                                                      @PathVariable("date2") LocalDate endDate){
+    @GetMapping("/all/{startDate}/{endDate}")
+    public List<Subscription> getSubscriptionsByDates(@PathVariable("startDate") LocalDate startDate,
+                                                      @PathVariable("endDate") LocalDate endDate){
         return subscriptionServices.retrieveSubscriptionsByDates(startDate, endDate);
     }
 

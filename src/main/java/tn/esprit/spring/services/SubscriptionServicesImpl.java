@@ -75,6 +75,7 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
         Float revenue = subscriptionRepository.recurringRevenueByTypeSubEquals(TypeSubscription.MONTHLY)
                 + subscriptionRepository.recurringRevenueByTypeSubEquals(TypeSubscription.SEMESTRIEL)/6
                 + subscriptionRepository.recurringRevenueByTypeSubEquals(TypeSubscription.ANNUAL)/12;
+        if (revenue!=null)
         log.info("Monthly Revenue = " + revenue);
     }
 }

@@ -1,6 +1,7 @@
 package tn.esprit.spring.services;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.entities.Course;
 import tn.esprit.spring.entities.Instructor;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
+@Slf4j
 @Service
 public class InstructorServicesImpl implements IInstructorServices{
 

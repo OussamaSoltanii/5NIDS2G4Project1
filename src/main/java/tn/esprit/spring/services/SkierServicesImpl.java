@@ -1,6 +1,7 @@
 package tn.esprit.spring.services;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.entities.*;
 import tn.esprit.spring.repositories.*;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
+@Slf4j
 @Service
 public class SkierServicesImpl implements ISkierServices {
 

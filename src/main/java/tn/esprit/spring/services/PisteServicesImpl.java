@@ -1,12 +1,14 @@
 package tn.esprit.spring.services;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.entities.Piste;
 import tn.esprit.spring.repositories.IPisteRepository;
 
 import java.util.List;
 @AllArgsConstructor
+@Slf4j
 @Service
 public class PisteServicesImpl implements  IPisteServices{
 

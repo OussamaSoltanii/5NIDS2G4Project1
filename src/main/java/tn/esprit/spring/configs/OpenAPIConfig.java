@@ -9,35 +9,20 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenAPIConfig {
-
-    @Bean
-    public OpenAPI springShopOpenAPI() {
-        return new OpenAPI()
-                .info(infoAPI());
-
+        @Bean
+        public OpenAPI springShopOpenAPI() {
+            return new OpenAPI()
+                    .info(infoAPI());
+        }
+        public Info infoAPI() {
+            return new Info().title("SpringDoc-Demo")
+                    .description("DEVOPS")
+                    .contact(contactAPI());
+        }
+        public Contact contactAPI() {
+            Contact contact = new Contact().name("Equipe ASI II")
+                    .email("syrine.zouari@esprit.tn")
+                    .url("https://www.linkedin.com/in/syrinezouari/");
+            return contact;
+        }
     }
-
-    public Info infoAPI() {
-        return new Info().title("\uD83C\uDFBF SKI STATION MANAGEMENT \uD83D\uDEA0")
-                .description("Case Study - SKI STATION")
-                .contact(contactAPI());
-    }
-
-    public Contact contactAPI() {
-        return new Contact().name("TEAM ASI II")
-                .email("ons.bensalah@esprit.tn")
-                .url("https://www.linkedin.com/in/ons-ben-salah-24b73494/");
-    }
-
-
-    @Bean
-    public GroupedOpenApi productPublicApi() {
-        return GroupedOpenApi.builder()
-                .group("SKI STATION Management API")
-                .pathsToMatch("/**/**")
-                .pathsToExclude("**")
-                .build();
-    }
-
-
-}

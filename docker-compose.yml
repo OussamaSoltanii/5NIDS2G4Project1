@@ -35,6 +35,20 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - my-network
+    volumes:
+      - ./prometheus-config:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    depends_on:
+      - spring-app
 
+networks:
+  my-network:
 volumes:
   db :

@@ -46,19 +46,19 @@ class GestionStationSkiApplicationTests {
 	@Test
 	@Order(1)
 	public void retrieveAllSkiers() {
-		List<Skier> skierList=ss.retrieveAllSkiers();
+		List<Skier> skierList = ss.retrieveAllSkiers();
 		Assertions.assertNotNull(skierList);
 
-	}
-	@Test
-	public void retrieveSubscriptionById() {
-		Subscription subscription=sub.retrieveSubscriptionById(1L);
-		Assertions.assertNotNull(subscription);
 	}
 	@Test
 	public void numWeeksCourseOfInstructorBySupport() {
 		List<Integer> registration=rs.numWeeksCourseOfInstructorBySupport(1L,Support.SNOWBOARD);
 		Assertions.assertNotNull(registration);
+	}
+	@Test
+	public void retrieveSubscriptionById() {
+		Subscription subscription=sub.retrieveSubscriptionById(1L);
+		Assertions.assertNotNull(subscription);
 	}
 
 }

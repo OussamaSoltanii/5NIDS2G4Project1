@@ -27,7 +27,13 @@ public class Subscription implements Serializable {
 	LocalDate startDate;
 	LocalDate endDate;
 	Float price;
-//	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)
 	TypeSubscription typeSub;
 
+	public Subscription(LocalDate of, LocalDate of1, float i, TypeSubscription typeSub) {
+		this.startDate=of;
+		this.endDate=of1;
+		this.price=i;
+		this.typeSub=typeSub;
+	}
 }
