@@ -16,6 +16,9 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+			<!-- Define SonarQube properties -->
+			<sonar.host.url>http://192.168.1.50:9000</sonar.host.url>
+			<sonar.login>sqa_e15bd509fe6c5b62d2b17adbfca5015bf5f7c3f6</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,6 +61,11 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.9</version>
 		</dependency>
+		<dependency>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.10.0.2594</version>
+		</dependency>
 	</dependencies>
 	<distributionManagement>
 		<repository>
@@ -79,6 +87,15 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
 			</plugin>
 		</plugins>
 	</build>
