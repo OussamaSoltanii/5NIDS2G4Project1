@@ -13,7 +13,6 @@ services:
       - db:/var/lib/mysql
     networks:
       - my-network
-
   app:
     depends_on:
       - mysqldb
