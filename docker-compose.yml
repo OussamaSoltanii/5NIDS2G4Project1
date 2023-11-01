@@ -44,7 +44,7 @@ services:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
-    
+
   nexus:
     image: sonatype/nexus3:latest
     ports:
@@ -58,3 +58,4 @@ services:
       - "3000:3000"
 volumes:
   db :
+  nexus-data:
