@@ -4,12 +4,10 @@ services:
   mysqldb:
     image: mysql:latest
     restart: unless-stopped
-#    env_file: ./.env
     environment:
-      - MYSQLDB_DOCKER_PORT=3306
-      - MYSQLDB_ROOT_PASSWORD=
-      - MYSQLDB_DATABASE=Devops
-      - MYSQLDB_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_DATABASE=Devops
+      - MYSQL_USER=root
       - MYSQL_PASSWORD=
     ports:
       - "3306:3306"
