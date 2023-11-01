@@ -36,9 +36,11 @@ public class SubscriptionServiceImplMock {
     SubscriptionServicesImpl subscriptionServices;
         Subscription subscription= new Subscription(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31),200,MONTHLY);
     @Test
-    public void testRetrieveUser() {
-        Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
-        Subscription sub1 = subscriptionServices.retrieveSubscriptionById(1L);
-        Assertions.assertNotNull(sub1);
+    public void testRetrieveSubscription() {
+        // Mock the repository to return an empty Optional (no subscription found)
+        Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.empty());
+
+        Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
+        Assertions.assertNull(sub);
     }
 }
