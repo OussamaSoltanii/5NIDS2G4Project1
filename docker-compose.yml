@@ -40,5 +40,18 @@ services:
 
     ports:
       - "9090:9090"
+  grafana: # Ajout du service Grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - "8081:8081"
+
+  sonarqube:
+    image: sonarqube
+    ports:
+      - "9000:9000"
 volumes:
   db:
