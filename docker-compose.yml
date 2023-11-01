@@ -8,7 +8,7 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=Devops
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=0000
     ports:
       - "3306:3306"
     volumes:
