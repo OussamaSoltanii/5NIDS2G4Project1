@@ -72,7 +72,9 @@ services:
       volumes:
         - nexus-data:/nexus-data
 networks:
-  my-network:
+  default:
+    external:
+      name: docker-compose_default
 volumes:
   db :
   grafana-storage:
