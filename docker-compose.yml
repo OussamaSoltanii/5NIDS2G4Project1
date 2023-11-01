@@ -6,14 +6,15 @@ services:
     restart: unless-stopped
     env_file: ./.env
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE= stationSki
-      - MYSQL_USER=
-      - MYSQL_PASSWORD =
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=stationSki
+      - MYSQL_USER=myappuser
+      - MYSQL_PASSWORD=anothersecretpassword
     ports:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
+
   app:
     depends_on:
       - mysql
@@ -35,10 +36,11 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
+
   sonarqube:
-      image: sonarqube:latest
-      ports:
-        - "9000:9000"
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
 
   prometheus:
     image: prom/prometheus:latest
@@ -50,12 +52,13 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - ./nexus-data:/nexus-data  # Montez un volume pour les données Nexus
+      - ./nexus-data:/nexus-data
 
   grafana:
     image: grafana/grafana:latest
     ports:
       - "3000:3000"
+
 volumes:
-  db :
+  db:
   nexus-data:
