@@ -5,7 +5,7 @@ services:
     image: mysql:latest
     restart: unless-stopped
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=Devops
       - MYSQL_USER=root
       - MYSQL_PASSWORD=
