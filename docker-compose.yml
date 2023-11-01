@@ -11,6 +11,9 @@ services:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
+    networks:
+      - my-network
+
   app:
     depends_on:
       - mysqldb
@@ -72,9 +75,7 @@ services:
       volumes:
         - nexus-data:/nexus-data
 networks:
-  default:
-    external:
-      name: docker-compose_default
+  my-network:
 volumes:
   db :
   grafana-storage:
