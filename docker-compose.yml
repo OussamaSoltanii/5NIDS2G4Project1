@@ -44,14 +44,22 @@ services:
     image: grafana/grafana
     ports:
       - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana:rw
   nexus:
     image: sonatype/nexus3
     ports:
       - "8081:8081"
+    volumes:
+      - nexus-data:/nexus-data
 
   sonarqube:
     image: sonarqube
     ports:
       - "9000:9000"
+    volumes:
+      - SonarQube_data:/opt/SonarQube/data
+      - SonarQube_extensions:/opt/SonarQube/extensions
+      - SonarQube_logs:/opt/SonarQube/logs
 volumes:
   db:
