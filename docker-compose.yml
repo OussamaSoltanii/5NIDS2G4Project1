@@ -1,4 +1,4 @@
-version: "2.23.0"  #  version  Docker Compose
+version: "2.23.0"
 
 services:
   mysql:
@@ -37,15 +37,16 @@ services:
 
   prometheus:
     image: prom/prometheus
-
     ports:
       - "9090:9090"
-  grafana: # Ajout du service Grafana
+
+  grafana:
     image: grafana/grafana
     ports:
       - "3000:3000"
     volumes:
       - grafana-storage:/var/lib/grafana:rw
+
   nexus:
     image: sonatype/nexus3
     ports:
@@ -61,5 +62,11 @@ services:
       - SonarQube_data:/opt/SonarQube/data
       - SonarQube_extensions:/opt/SonarQube/extensions
       - SonarQube_logs:/opt/SonarQube/logs
+
 volumes:
   db:
+  grafana-storage:
+  nexus-data:
+  SonarQube_data:
+  SonarQube_extensions:
+  SonarQube_logs:
