@@ -42,5 +42,6 @@ public class SubscriptionServiceImplMock {
 
         Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
         Assertions.assertNull(sub);
+        //hopefully this works
     }
 }
