@@ -6,8 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - MYSQLDB_USER=root
-      - MYSQLDB_ROOT_PASSWORD=000
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQLDB_ROOT_PASSWORD=0000
       - MYSQL_DATABASE=Devops
     ports:
       - "3306:3306"
