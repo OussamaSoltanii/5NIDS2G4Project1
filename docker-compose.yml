@@ -9,6 +9,7 @@ services:
       - MYSQLDB_ROOT_PASSWORD=000
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=Devops
+      - SET GLOBAL host_cache_size=0
     ports:
       - "3306:3306"
     volumes:
