@@ -29,7 +29,7 @@ services:
         "spring.datasource.username" : "${MYSQLDB_USER}",
         "spring.datasource.password" : "${MYSQLDB_ROOT_PASSWORD}",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
+        "spring.jpa.hibernate.ddl-auto" : "none"
       }'
     volumes:
       - ./5NIDS2-G4-Projet1-1.0.jar:/syrinezouari-5nids2-g4-projet1.jar
