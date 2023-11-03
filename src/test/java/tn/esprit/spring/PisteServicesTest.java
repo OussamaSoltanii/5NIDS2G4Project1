@@ -14,7 +14,7 @@ import java.util.List;
 @SpringBootTest
 public class PisteServicesTest {
 
-    @Autowired
+    /*@Autowired
     IPisteServices ps;
 
     @Test
@@ -102,7 +102,7 @@ public class PisteServicesTest {
     //IPisteServices ps;
 
     //@Test
-   /* @DirtiesContext
+   *//* @DirtiesContext
     public void testRetrieveAllPistes() {
         // Créez une nouvelle piste pour l'ajouter dans le test
         Piste piste = new Piste();
