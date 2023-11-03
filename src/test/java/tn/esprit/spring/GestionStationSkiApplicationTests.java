@@ -4,10 +4,8 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.spring.entities.*;
-import tn.esprit.spring.repositories.ISubscriptionRepository;
 import tn.esprit.spring.services.*;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @SpringBootTest
