@@ -78,6 +78,12 @@ services:
         - nexus-data:/nexus-data
 networks:
   my-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24  # Change the subnet here
+    driver_opts:
+      com.docker.network.bridge.name: my-bridge
 volumes:
   db :
   grafana-storage:
