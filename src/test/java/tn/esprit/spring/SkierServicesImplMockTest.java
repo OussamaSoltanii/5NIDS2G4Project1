@@ -60,7 +60,11 @@ public class SkierServicesImplMockTest {
         skier.setCity("New York");
 
         Subscription subscription = new Subscription();
+        if (subscription.getStartDate() != null) {
+            subscription.getStartDate().plusYears(1);
+        }
         subscription.setTypeSub(TypeSubscription.ANNUAL);
+        subscription.setStartDate(LocalDate.now());
         skier.setSubscription(subscription);
 
         when(skierRepository.save(any(Skier.class))).thenReturn(skier);
