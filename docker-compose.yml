@@ -36,6 +36,8 @@ services:
     stdin_open: true
     tty: true
     command: bash -c "sleep 30 && java -jar /syrinezouari-5nids2-g4-projet1.jar"
+    networks:
+      - my-network
   prometheus:
     image: prom/prometheus
     ports:
