@@ -1,6 +1,22 @@
 version: "3.9"
 
 services:
+  app:
+    depends_on:
+      - mysqldb
+    build: ./
+    restart: on-failure
+    #    env_file: ./.env
+    ports:
+      - "8089:8089"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/${MYSQL_DATABASE}?useSSL=false
+      - SPRING_DATASOURCE_USERNAME=${MYSQLDB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${MYSQLDB_ROOT_PASSWORD}
+    volumes:
+      - ./5NIDS2-G4-Projet1-1.0.jar:/syrinezouari-5nids2-g4-projet1.jar
+    stdin_open: true
+    tty: true
   mysqldb:
     image: mysql:latest
     restart: unless-stopped
@@ -15,22 +31,6 @@ services:
       - db:/var/lib/mysql
     networks:
       - my-network
-  app:
-    depends_on:
-      - mysqldb
-    build: ./
-    restart: on-failure
-#    env_file: ./.env
-    ports:
-      - "8089:8089"
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/${MYSQL_DATABASE}?useSSL=false
-      - SPRING_DATASOURCE_USERNAME=${MYSQLDB_USER}
-      - SPRING_DATASOURCE_PASSWORD=${MYSQLDB_ROOT_PASSWORD}
-    volumes:
-      - ./5NIDS2-G4-Projet1-1.0.jar:/syrinezouari-5nids2-g4-projet1.jar
-    stdin_open: true
-    tty: true
   prometheus:
     image: prom/prometheus
     ports:
