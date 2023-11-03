@@ -7,8 +7,8 @@ services:
     env_file: ./.env
     environment:
       - MYSQL_DATABASE=stationSki
-      - MYSQLDB_USER=root
-      - MYSQLDB_ROOT_PASSWORD=""
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
     ports:
       - "3306:3306"
     volumes:
