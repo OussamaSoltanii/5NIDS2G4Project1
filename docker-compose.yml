@@ -24,13 +24,9 @@ services:
     ports:
       - "8089:8089"
     environment:
-      SPRING_APPLICATION_JSON: '{
-         "spring.datasource.url"  : "jdbc:mysql://192.168.1.50:3306/${MYSQL_DATABASE}?useSSL=false",
-        "spring.datasource.username" : "${MYSQLDB_USER}",
-        "spring.datasource.password" : "${MYSQLDB_ROOT_PASSWORD}",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/${MYSQL_DATABASE}?useSSL=false
+      - SPRING_DATASOURCE_USERNAME=${MYSQLDB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${MYSQLDB_ROOT_PASSWORD}
     volumes:
       - ./5NIDS2-G4-Projet1-1.0.jar:/syrinezouari-5nids2-g4-projet1.jar
     stdin_open: true
