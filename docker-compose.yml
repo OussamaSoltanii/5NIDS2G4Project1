@@ -45,6 +45,21 @@ services:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
+    networks:
+      - my-network
+    volumes:
+        - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+    depends_on:
+        - app
+    environment:
+        - MYSQL_ROOT_PASSWORD=
+        - MYSQL_DATABASE=stationSki
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=
+        - GF_SECURITY_ADMIN_USER=admin
+        - GF_SECURITY_ADMIN_PASSWORD=grafana
 
   nexus:
     image: sonatype/nexus3
