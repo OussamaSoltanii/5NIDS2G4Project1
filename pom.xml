@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
-	<artifactId>gestion-station-ski</artifactId>
+	<artifactId>5NIDS2-G4-Projet1GestSki</artifactId>
 	<version>1.0</version>
-	<name>gestion-station-ski</name>
+	<name>5NIDS2-G4-Projet1GestSki</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>

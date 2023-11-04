@@ -38,8 +38,6 @@ services:
     image: sonarqube:latest
     ports:
       - "9000:9000"
-
-
   prometheus:
     image: prom/prometheus:latest
     ports:
