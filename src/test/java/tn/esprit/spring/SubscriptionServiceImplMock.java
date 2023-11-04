@@ -26,7 +26,7 @@ public class SubscriptionServiceImplMock {
 
     @InjectMocks
     SubscriptionServicesImpl subscriptionServices;
-        Subscription subscription= new Subscription();
+        Subscription subscription= new Subscription(LocalDate.of(2023, 10, 1), LocalDate.of(2023, 12, 31),200,TypeSubscription.ANNUAL);
     @Test
     public void testRetrieveSubscription() {
         // Mock the repository to return an Optional with the subscription
