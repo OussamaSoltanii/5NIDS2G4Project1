@@ -16,6 +16,7 @@ import tn.esprit.spring.repositories.ISubscriptionRepository;
 import tn.esprit.spring.services.SubscriptionServicesImpl;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -32,7 +33,7 @@ public class SubscriptionServiceImplMock {
         // Mock the repository to return an Optional with the subscription
         Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
 
-        Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
+        Subscription sub = subscriptionServices.retrieveSubscriptionsByDates(LocalDate.of(2023, 11, 25),(LocalDate.of(2023, 10, 1));
                 Assertions.assertNull(sub);
     }
 }
