@@ -32,7 +32,7 @@ public class SubscriptionServiceImplMock {
         // Mock the repository to return an Optional with the subscription
         Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
 
-        Subscription sub = subscriptionServices.retrieveSubscriptionById(subscription.getNumSub());
-        Assertions.assertNull(sub);
+        Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
+                Assertions.assertNull(sub);
     }
 }
