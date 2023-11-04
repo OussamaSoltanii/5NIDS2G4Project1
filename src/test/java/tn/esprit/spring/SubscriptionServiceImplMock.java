@@ -26,13 +26,13 @@ public class SubscriptionServiceImplMock {
 
     @InjectMocks
     SubscriptionServicesImpl subscriptionServices;
-        Subscription subscription= new Subscription(LocalDate.of(2023, 10, 1), LocalDate.of(2023, 12, 31),200,TypeSubscription.ANNUAL);
+        Subscription subscription= new Subscription();
     @Test
     public void testRetrieveSubscription() {
         // Mock the repository to return an Optional with the subscription
         Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
 
-        Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
+        Subscription sub = subscriptionServices.retrieveSubscriptionById(subscription.getNumSub());
         Assertions.assertNull(sub);
     }
 }
