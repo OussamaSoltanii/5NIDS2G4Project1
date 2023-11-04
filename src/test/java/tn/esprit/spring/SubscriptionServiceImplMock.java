@@ -41,6 +41,6 @@ public class SubscriptionServiceImplMock {
         Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
 
         Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
-        Assertions.assertNotNull(sub);
+        Assertions.assertNull(sub);
     }
 }
