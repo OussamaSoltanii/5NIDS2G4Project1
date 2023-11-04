@@ -10,15 +10,21 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import tn.esprit.spring.entities.Subscription;
 import tn.esprit.spring.entities.TypeSubscription;
+import tn.esprit.spring.repositories.IPisteRepository;
+import tn.esprit.spring.repositories.IRegistrationRepository;
 import tn.esprit.spring.repositories.ISubscriptionRepository;
+import tn.esprit.spring.services.SkierServicesImpl;
 import tn.esprit.spring.services.SubscriptionServicesImpl;
 
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
+
+import static tn.esprit.spring.entities.TypeSubscription.MONTHLY;
+
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
@@ -28,15 +34,13 @@ public class SubscriptionServiceImplMock {
 
     @InjectMocks
     SubscriptionServicesImpl subscriptionServices;
-        Subscription subscription= new Subscription(LocalDate.of(2023, 10, 1), LocalDate.of(2023, 12, 31),200,TypeSubscription.ANNUAL);
+        Subscription subscription= new Subscription(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31),200,MONTHLY);
     @Test
     public void testRetrieveSubscription() {
         // Mock the repository to return an Optional with the subscription
         Mockito.when(subscriptionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(subscription));
 
-        List<Subscription> sub = subscriptionServices.retrieveSubscriptionsByDates(LocalDate.of(2023, 11, 25),(LocalDate.of(2023, 10, 1)));
-                Assertions.assertNull(sub);
-        Assertions.assertEquals(1, sub.size()); // Assuming it should return one subscription
-
+        Subscription sub = subscriptionServices.retrieveSubscriptionById(1L);
+        Assertions.assertNull(sub);
     }
 }
