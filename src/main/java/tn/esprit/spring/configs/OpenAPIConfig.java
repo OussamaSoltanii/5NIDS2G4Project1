@@ -19,9 +19,8 @@ public class OpenAPIConfig {
                     .contact(contactAPI());
         }
         public Contact contactAPI() {
-            Contact contact = new Contact().name("Equipe ASI II")
+            return new Contact().name("Equipe ASI II")
                     .email("syrine.zouari@esprit.tn")
                     .url("https://www.linkedin.com/in/syrinezouari/");
-            return contact;
         }
     }

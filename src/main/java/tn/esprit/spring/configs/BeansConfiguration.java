@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class BeansConfiguration {
-    private static final Logger log = LoggerFactory.getLogger(BeansConfiguration.class);
+//    private static final Logger log = LoggerFactory.getLogger(BeansConfiguration.class);
 
-    public BeansConfiguration() {
-    }
+//    public BeansConfiguration() {
+//    }
 }
