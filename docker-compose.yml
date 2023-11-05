@@ -6,10 +6,8 @@ services:
     restart: unless-stopped
     env_file: ./.env
     environment:
-      - MYSQLDB_USER=root
-      - MYSQLDB_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=stationSki
-#      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
       - "3306:3306"
     volumes:
@@ -28,7 +26,7 @@ services:
         {
           "spring.datasource.url": "jdbc:mysql://mysql:3306/stationSki?createDatabaseIfNotExist=true",
           "spring.datasource.username": "root",
-          "spring.datasource.password": "admin",
+          "spring.datasource.password": "",
           "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
           "spring.jpa.hibernate.ddl-auto": "update"
         }
