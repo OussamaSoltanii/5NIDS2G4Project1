@@ -36,6 +36,7 @@ public class Piste implements Serializable {
 		this.length = length;
 		this.slope = slope;
 	}
+	@JsonIgnore
 	@ManyToMany(mappedBy= "pistes")
 	Set<Skier> skiers;
 	
