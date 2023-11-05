@@ -14,12 +14,12 @@ import java.util.List;
 @SpringBootTest
 public class PisteServicesTest {
 
-    /*@Autowired
+    @Autowired
     IPisteServices ps;
 
     @Test
     @DirtiesContext
-    public void testRetrieveAllPistes() {
+    public void RetrieveAllPistestest() {
         // Créez une nouvelle piste pour l'ajouter dans le test
         Piste piste = new Piste();
         piste.setNamePiste("Piste de test"); // Utilisation de "name" au lieu de "nom"
@@ -47,7 +47,7 @@ public class PisteServicesTest {
 
     @Test
     @DirtiesContext
-    public void testAddPiste() {
+    public void AddPistetest() {
         // Créez une nouvelle piste pour l'ajouter avec le service
         Piste piste = new Piste();
         piste.setNamePiste("Nouvelle Piste");
@@ -78,7 +78,7 @@ public class PisteServicesTest {
 
     @Test
     @DirtiesContext
-    public void testRemovePiste() {
+    public void RemovePistetest() {
         // Créez une nouvelle piste pour l'ajouter avec le service
         Piste piste = new Piste();
         piste.setNamePiste("Piste à supprimer"); // Utilisation de "name" au lieu de "nom"
@@ -102,8 +102,8 @@ public class PisteServicesTest {
     //IPisteServices ps;
 
     //@Test
-   *//* @DirtiesContext
-    public void testRetrieveAllPistes() {
+   //* @DirtiesContext
+    /*public void testRetrieveAllPistes() {
         // Créez une nouvelle piste pour l'ajouter dans le test
         Piste piste = new Piste();
         piste.setNamePiste("Piste de test");
