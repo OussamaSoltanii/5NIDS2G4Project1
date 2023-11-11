@@ -11,7 +11,3 @@ repos:
       - id: hooks_version_check
         name: Checking local hooks against latest release
         verbose: true
-      # Disable the `security_git_hooks` pre-commit hook
-      - id: security_git_hooks.secrets-filecontent
-        name: Disable security_git_hooks pre-commit hook
-        entry: ''
