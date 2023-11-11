@@ -1,0 +1,37 @@
+rules:
+  - name: no_secrets_in_code
+    description: Check for the presence of secrets in code files
+    enabled: true
+    file_patterns:
+      - '*.java'
+      - '*.properties'
+      - '*.yml'
+    severity: high
+
+  - name: no_hardcoded_credentials
+    description: Check for hardcoded credentials in the code
+    enabled: true
+    file_patterns:
+      - '**/*.java'
+    severity: high
+
+  - name: dependency_scanning
+    description: Check for known vulnerabilities in project dependencies
+    enabled: true
+    file_patterns:
+      - 'pom.xml'
+    severity: medium
+
+  - name: check_maven_settings
+    description: Check for secure Maven settings
+    enabled: true
+    file_patterns:
+      - 'settings.xml'
+    severity: medium
+
+  - name: code_analysis
+    description: Perform static code analysis for potential security issues
+    enabled: true
+    file_patterns:
+      - '**/*.java'
+    severity: medium
