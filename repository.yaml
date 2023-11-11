@@ -35,6 +35,5 @@ rules:
     file_patterns:
       - '**/*.java'
     severity: medium
-
 repository:
   repoVisibility: public
