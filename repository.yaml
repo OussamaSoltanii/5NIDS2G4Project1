@@ -35,3 +35,6 @@ rules:
     file_patterns:
       - '**/*.java'
     severity: medium
+
+repository:
+  repoVisibility: private  # Replace 'private' with the desired visibility value
