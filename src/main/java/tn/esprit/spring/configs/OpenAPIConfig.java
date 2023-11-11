@@ -18,26 +18,20 @@ public class OpenAPIConfig {
     }
 
     public Info infoAPI() {
-        return new Info().title("\uD83C\uDFBF SKI STATION MANAGEMENT \uD83D\uDEA0")
+        return new Info().title("SpringDoc-Demo")
                 .description("Case Study - SKI STATION")
                 .contact(contactAPI());
     }
 
     public Contact contactAPI() {
-        return new Contact().name("TEAM ASI II")
-                .email("ons.bensalah@esprit.tn")
-                .url("https://www.linkedin.com/in/ons-ben-salah-24b73494/");
+        Contact contact = new Contact().name("Equipe ASI II")
+                .email("oussama.soltani@esprit.tn")
+                .url("www.linkedin.com/in/oussama-soltani-2186a2227");
+        return contact;
     }
 
 
-    @Bean
-    public GroupedOpenApi productPublicApi() {
-        return GroupedOpenApi.builder()
-                .group("SKI STATION Management API")
-                .pathsToMatch("/**/**")
-                .pathsToExclude("**")
-                .build();
-    }
+
 
 
 }

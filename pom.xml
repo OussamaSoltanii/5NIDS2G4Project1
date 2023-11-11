@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
-	<artifactId>gestion-station-ski</artifactId>
+	<artifactId>5NIDS-G4-P1Gestion-station-ski</artifactId>
 	<version>1.0</version>
-	<name>gestion-station-ski</name>
+	<name>5NIDS-G4-P1Gestion-station-ski</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.12</version>
+			<version>1.6.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,6 +65,11 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+<!--		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version> &lt;!&ndash; Remplacez par la version la plus récente &ndash;&gt;
+		</dependency>-->
 
 	</dependencies>
 	<distributionManagement>
