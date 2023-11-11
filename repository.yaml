@@ -37,4 +37,4 @@ rules:
     severity: medium
 
 repository:
-  repoVisibility: public
+  repoVisibility: private
