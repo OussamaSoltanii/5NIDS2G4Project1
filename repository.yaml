@@ -12,7 +12,7 @@ rules:
     description: Check for hardcoded credentials in the code
     enabled: true
     file_patterns:
-      - '**/*.java'
+      - '*/.java'
     severity: high
 
   - name: dependency_scanning
@@ -33,8 +33,5 @@ rules:
     description: Perform static code analysis for potential security issues
     enabled: true
     file_patterns:
-      - '**/*.java'
+      - '*/.java'
     severity: medium
-
-repository:
-  repoVisibility: public
