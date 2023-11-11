@@ -37,4 +37,4 @@ rules:
     severity: medium
 
 repository:
-  repoVisibility: private  # Replace 'private' with the desired visibility value
+  repoVisibility: public
