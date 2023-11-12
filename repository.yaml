@@ -37,3 +37,4 @@ rules:
     severity: medium
 repository:
   repoVisibility: public
+  encoding: iso-8859-1
