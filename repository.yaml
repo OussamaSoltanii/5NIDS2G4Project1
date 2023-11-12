@@ -36,4 +36,4 @@ rules:
       - '*/.java'
     severity: medium
 repository:
-  repoVisibility: private
+  repoVisibility: public
