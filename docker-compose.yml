@@ -110,3 +110,5 @@ volumes:
   SonarQube_data:
   SonarQube_extensions:
   SonarQube_logs:
+  anchore-db:
+  anchore-config:
