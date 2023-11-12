@@ -77,34 +77,6 @@ services:
         - "8081:8081"
       volumes:
         - nexus-data:/nexus-data
-  anchor-api:
-    image: anchore/enterprise:latest
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    environment:
-      ANCHORE_SERVER_URL: http://anchor-api:8080
-      ANCHORE_AUTH_MODE: local
-
-  anchor-db:
-    image: postgres:12-alpine
-    restart: unless-stopped
-    environment:
-     POSTGRES_PASSWORD: password
-
-  anchor-vuln-scanner:
-    image: anchore/vuln-scanner:latest
-    restart: unless-stopped
-    depends_on:
-        - anchor-api
-        - anchor-db
-
-  anchor-policy-engine:
-    image: anchore/policy-engine:latest
-    restart: unless-stopped
-    depends_on:
-        - anchor-api
-        - anchor-db
 networks:
   my-network:
 volumes:
@@ -114,5 +86,3 @@ volumes:
   SonarQube_data:
   SonarQube_extensions:
   SonarQube_logs:
-  anchore-db:
-  anchore-config:
