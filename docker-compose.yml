@@ -78,7 +78,7 @@ services:
       volumes:
         - nexus-data:/nexus-data
   anchore:
-    image: anchore/engine
+    image: docker.io/anchore/engine:latest
     depends_on:
       - app
     ports:
