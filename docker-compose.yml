@@ -77,30 +77,34 @@ services:
         - "8081:8081"
       volumes:
         - nexus-data:/nexus-data
-  anchore:
-    image: docker.io/anchore/engine:latest
-    depends_on:
-      - app
+  anchor-api:
+    image: anchore/enterprise:latest
+    restart: unless-stopped
     ports:
-      - "8228:8228"
-    networks:
-      - my-network
-    volumes:
-      - anchore-db:/var/lib/anchore-engine/db
-      - anchore-config:/config
+      - "8080:8080"
     environment:
-      - ANCHORE_ENGINE_DB_HOST=mysqldb
-      - ANCHORE_ENGINE_DB_PORT=3306
-      - ANCHORE_ENGINE_DB_USER=root
-      - ANCHORE_ENGINE_DB_PASSWORD=${MYSQLDB_ROOT_PASSWORD}
-      - ANCHORE_ENGINE_DB_NAME=anchore
-      - ANCHORE_ENGINE_ADMIN_PASSWORD=admin
-      - ANCHORE_ENGINE_HOST_ID=myhost
-      - ANCHORE_ENGINE_SERVICES=localhost:5000
-      - ANCHORE_ENGINE_ANALYZERS_ENABLED=all
-      - ANCHORE_ENGINE_AUTHZ_HANDLER=local
-      - ANCHORE_ENGINE_NO_FEEDS=True
-      - ANCHORE_ENGINE_FEEDS_URLS=None
+      ANCHORE_SERVER_URL: http://anchor-api:8080
+      ANCHORE_AUTH_MODE: local
+
+  anchor-db:
+    image: postgres:12-alpine
+    restart: unless-stopped
+    environment:
+     POSTGRES_PASSWORD: password
+
+  anchor-vuln-scanner:
+    image: anchore/vuln-scanner:latest
+    restart: unless-stopped
+    depends_on:
+        - anchor-api
+        - anchor-db
+
+  anchor-policy-engine:
+    image: anchore/policy-engine:latest
+    restart: unless-stopped
+    depends_on:
+        - anchor-api
+        - anchor-db
 networks:
   my-network:
 volumes:
