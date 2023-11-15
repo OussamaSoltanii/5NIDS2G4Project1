@@ -16,7 +16,6 @@ services:
   app:
     depends_on:
       - mysql
-      - prometheus
     build: ./
     restart: on-failure
     env_file: ./.env
