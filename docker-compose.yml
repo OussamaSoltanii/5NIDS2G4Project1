@@ -16,6 +16,7 @@ services:
   app:
     depends_on:
       - mysql
+      - prometheus
     build: ./
     restart: on-failure
     env_file: ./.env
@@ -28,7 +29,9 @@ services:
           "spring.datasource.username": "root",
           "spring.datasource.password": "",
           "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
-          "spring.jpa.hibernate.ddl-auto": "update"
+          "spring.jpa.hibernate.ddl-auto": "update",
+          "spring.boot.actuate.endpoint.prometheus.enabled": "true",
+          "spring.boot.actuate.endpoint.prometheus.exposure.include": "*"
         }
     volumes:
       - .m2:/root/.m2
