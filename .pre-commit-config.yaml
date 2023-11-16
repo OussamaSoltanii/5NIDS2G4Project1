@@ -1,5 +1,5 @@
 repos:
-  - repo: https://github.com/OussamaSoltanii/5nids2g4project1/tree/OussamaSoltani-5NIDS2-G4
+  - repo: https://github.com/hmrc/security-git-hooks
     rev: v1.0.0-beta9
     hooks:
       - id: secrets_filecontent
